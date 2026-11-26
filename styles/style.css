@@ -42,3 +42,11 @@
 .jadwal-card:hover {
   transform: translateY(-4px);
 }
+
+/* Background Foto per Section dengan Overlay Gelap Otomatis */
+.section-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
