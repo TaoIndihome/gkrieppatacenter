@@ -50,3 +50,24 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* Animasi Teks Berjalan (Marquee) DEMO VERSION */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 22s linear infinite;
+}
+
+/* Berhenti sejenak saat kursor diarahkan ke pita */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
