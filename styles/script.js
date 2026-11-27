@@ -13,8 +13,25 @@ document.querySelectorAll("#mobile-menu a").forEach((link) => {
   });
 });
 
-// 2. Countdown Timer Hari Besar
-// EDIT DI SINI: Ubah tanggal acara sesuai format "Month Day, Year HH:MM:SS"
+// 2. Tutup menu mobile otomatis saat link diklik
+document.querySelectorAll("#mobile-menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+  });
+});
+
+// Tutup menu mobile
+document.addEventListener("click", (e) => {
+  const isMenuOpen = !mobileMenu.classList.contains("hidden");
+  const isClickInsideMenu = mobileMenu.contains(e.target);
+  const isClickOnBtn = mobileBtn.contains(e.target);
+
+  if (isMenuOpen && !isClickInsideMenu && !isClickOnBtn) {
+    mobileMenu.classList.add("hidden");
+  }
+});
+
+// 2. Countdown Timer
 const targetDate = new Date("December 22, 2026 17:00:00").getTime();
 
 setInterval(() => {
